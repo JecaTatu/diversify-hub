@@ -1,4 +1,4 @@
-export class SignInModel {
+export class SignUpModel {
   name: string;
   email: string;
   nomeCompleto: string;

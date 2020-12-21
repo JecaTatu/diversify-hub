@@ -1,130 +1,237 @@
 <div class="screen__container">
-    <div class="login_background__container">
-        <div class="login_background__logo">
-            <img src="../../../assets/auth/logo.png" alt="">
-        </div>
-        <div class="welcome__container">
-            <img class="welcome__img" src="../../../assets/auth/welcome.png" alt="">
-            <div class="welcome__diagonal">
-                <h3 class="welcome__text">Olá, bem-vinde!
-                </h3>
-            </div>
-            <div class="welcome__subtitle">
-                <h6>
-                    Vem somar com a gente nessa jornada em busca de progresso profissional e diversidade dentro do mercado de trabalho! Cadastre-se ou efetue seu login!
-                </h6>
-            </div>
-        </div>
+  <div class="login_background__container">
+    <div class="login_background__logo">
+      <img src="../../../assets/auth/logo.png" alt="" />
     </div>
-    <div class="form__container">
-        <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
-            <div class="form__user_img">
-                <img src="../../../assets/auth/user.png" alt="">
-            </div>
-            <div class="login-form-item form-group">
-                <div class="inputs__wrapper">
-                    <div class="checker_item">
-                        <div class="radio__wrapper">
-                            <mat-radio-group [(ngModel)]="enterprise" class="radio_group" aria-label="Select an option" formControlName="checker">
-                                <div class="inputs">
-                                    <div class="radio__wrapper">
-                                        <mat-radio-button type="radio" id="checker" name="checker" value='0' [checked]="true"></mat-radio-button>
-                                    </div>
-                                    <label for="checker">Empresa</label>
-                                </div>
-                                <div class="inputs">
-                                    <div>
-                                        <mat-radio-button type="radio" id="checker " name="checker" value='1'></mat-radio-button>
-                                    </div>
-                                    <label for="checker">Pessoa</label>
-                                </div>
-                            </mat-radio-group>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div *ngIf="enterprise == '0'">
-                <div class="form-group">
-                    <div class="form-group form_input__container">
-                        <!-- <label class="active " for="email ">Seu email</label> -->
-                        <input id="name " type="text " class="form_input form-control " placeholder="NOME DA EMPRESA" name="name" ngModel required formControlName="name">
-                    </div>
-                    <div class="form-group form_input__container">
-                        <!-- <label class="active " for="email ">Seu email</label> -->
-                        <input id="email " type="text " class="form_input form-control " placeholder="EMAIL" name="email" ngModel required formControlName="email">
-                    </div>
-                    <div class="form-group form_input__container">
-                        <!-- <label class="active" for="password">Sua senha</label> -->
-                        <div class="input-group">
-                            <input [type]="fieldTextType ? 'text' : 'password'" id="password1" type="password1" class="form_input form-control" placeholder="SENHA" name="password1" ngModel required formControlName="password1">
-                            <div class="input-group-append">
-                                <span class="input-group-text">
-                                    <span class="material-icons" (click)="toggleFieldTextType()">
-                                        {{changeIcon()}}
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group form_input__container">
-                        <!-- <label class="active" for="password">Sua senha</label> -->
-                        <div class="input-group">
-                            <input [type]="fieldTextType ? 'text' : 'password'" id="password2" type="password2" class="form_input form-control" placeholder="DIGITE A SENHA NOVAMENTE" name="password2" ngModel required formControlName="password2">
-                            <div class="input-group-append">
-                                <span class="input-group-text">
-                                    <span class="material-icons" (click)="toggleFieldTextType()">
-                                        {{changeIcon()}}
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="button__container">
-                    <button type="submit" [disabled]="!signUpForm.valid" ref="" class="btn btn-info">Entrar</button>
-                </div>
-            </div>
-            <div *ngIf="enterprise == '1'">
-                <div class="form-group">
-                    <div class="form-group form_input__container">
-                        <!-- <label class="active " for="email ">Seu email</label> -->
-                        <input id="name " type="text " class="form_input form-control " placeholder="NOME COMPLETO" name="name" ngModel required formControlName="name">
-                    </div>
-                    <div class="form-group form_input__container">
-                        <!-- <label class="active " for="email ">Seu email</label> -->
-                        <input id="email " type="text " class="form_input form-control " placeholder="EMAIL" name="email" ngModel required formControlName="email">
-                    </div>
-                    <div class="form-group form_input__container">
-                        <!-- <label class="active" for="password">Sua senha</label> -->
-                        <div class="input-group">
-                            <input [type]="fieldTextType ? 'text' : 'password'" id="password1" type="password1" class="form_input form-control" placeholder="SENHA" name="password1" ngModel required formControlName="password1">
-                            <div class="input-group-append">
-                                <span class="input-group-text">
-                                    <span class="material-icons" (click)="toggleFieldTextType()">
-                                        {{changeIcon()}}
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group form_input__container">
-                        <!-- <label class="active" for="password">Sua senha</label> -->
-                        <div class="input-group">
-                            <input [type]="fieldTextType ? 'text' : 'password'" id="password2" type="password2" class="form_input form-control" placeholder="DIGITE A SENHA NOVAMENTE" name="password2" ngModel required formControlName="password2">
-                            <div class="input-group-append">
-                                <span class="input-group-text">
-                                    <span class="material-icons" (click)="toggleFieldTextType()">
-                                        {{changeIcon()}}
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="button__container">
-                    <button type="submit" [disabled]="!signUpForm.valid" ref="" class="btn btn-info">Cadastro</button>
-                </div>
-            </div>
-        </form>
+    <div class="welcome__container">
+      <img class="welcome__img" src="../../../assets/auth/welcome.png" alt="" />
+      <div class="welcome__diagonal">
+        <h3 class="welcome__text">Olá, bem-vinde!</h3>
+      </div>
+      <div class="welcome__subtitle">
+        <h6>
+          Vem somar com a gente nessa jornada em busca de progresso profissional
+          e diversidade dentro do mercado de trabalho! Cadastre-se ou efetue seu
+          login!
+        </h6>
+      </div>
     </div>
+  </div>
+  <div class="form__container">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+      <div class="form__user_img">
+        <img src="../../../assets/auth/user.png" alt="" />
+      </div>
+      <div class="login-form-item form-group">
+        <div class="inputs__wrapper">
+          <div class="checker_item">
+            <div class="radio__wrapper">
+              <mat-radio-group
+                [(ngModel)]="enterprise"
+                class="radio_group"
+                aria-label="Select an option"
+                formControlName="checker"
+              >
+                <div class="inputs">
+                  <div class="radio__wrapper">
+                    <mat-radio-button
+                      type="radio"
+                      id="checker"
+                      name="checker"
+                      value="0"
+                      [checked]="true"
+                    ></mat-radio-button>
+                  </div>
+                  <label for="checker">Empresa</label>
+                </div>
+                <div class="inputs">
+                  <div>
+                    <mat-radio-button
+                      type="radio"
+                      id="checker "
+                      name="checker"
+                      value="1"
+                    ></mat-radio-button>
+                  </div>
+                  <label for="checker">Pessoa</label>
+                </div>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="enterprise == '0'">
+        <div class="form-group">
+          <div class="form-group form_input__container">
+            <!-- <label class="active " for="email ">Seu email</label> -->
+            <input
+              id="name "
+              type="text "
+              class="form_input form-control"
+              placeholder="NOME DA EMPRESA"
+              name="name"
+              ngModel
+              required
+              formControlName="name"
+            />
+          </div>
+          <div class="form-group form_input__container">
+            <!-- <label class="active " for="email ">Seu email</label> -->
+            <input
+              id="email "
+              type="text "
+              class="form_input form-control"
+              placeholder="EMAIL"
+              name="email"
+              ngModel
+              required
+              formControlName="email"
+            />
+          </div>
+          <div class="form-group form_input__container">
+            <!-- <label class="active" for="password">Sua senha</label> -->
+            <div class="input-group">
+              <input
+                [type]="fieldTextType ? 'text' : 'password'"
+                id="password1"
+                type="password1"
+                class="form_input form-control"
+                placeholder="SENHA"
+                name="password1"
+                ngModel
+                required
+                formControlName="password1"
+              />
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <span class="material-icons" (click)="toggleFieldTextType()">
+                    {{ changeIcon() }}
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group form_input__container">
+            <!-- <label class="active" for="password">Sua senha</label> -->
+            <div class="input-group">
+              <input
+                [type]="fieldTextType ? 'text' : 'password'"
+                id="password2"
+                type="password2"
+                class="form_input form-control"
+                placeholder="DIGITE A SENHA NOVAMENTE"
+                name="password2"
+                ngModel
+                required
+                formControlName="password2"
+              />
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <span class="material-icons" (click)="toggleFieldTextType()">
+                    {{ changeIcon() }}
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button__container">
+          <button
+            type="submit"
+            [disabled]="!signUpForm.valid"
+            ref=""
+            class="btn btn-info"
+          >
+            Entrar
+          </button>
+        </div>
+      </div>
+      <div *ngIf="enterprise == '1'">
+        <div class="form-group">
+          <div class="form-group form_input__container">
+            <!-- <label class="active " for="email ">Seu email</label> -->
+            <input
+              id="name "
+              type="text "
+              class="form_input form-control"
+              placeholder="NOME COMPLETO"
+              name="name"
+              ngModel
+              required
+              formControlName="name"
+            />
+          </div>
+          <div class="form-group form_input__container">
+            <!-- <label class="active " for="email ">Seu email</label> -->
+            <input
+              id="email "
+              type="text "
+              class="form_input form-control"
+              placeholder="EMAIL"
+              name="email"
+              ngModel
+              required
+              formControlName="email"
+            />
+          </div>
+          <div class="form-group form_input__container">
+            <!-- <label class="active" for="password">Sua senha</label> -->
+            <div class="input-group">
+              <input
+                [type]="fieldTextType ? 'text' : 'password'"
+                id="password1"
+                type="password1"
+                class="form_input form-control"
+                placeholder="SENHA"
+                name="password1"
+                ngModel
+                required
+                formControlName="password1"
+              />
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <span class="material-icons" (click)="toggleFieldTextType()">
+                    {{ changeIcon() }}
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group form_input__container">
+            <!-- <label class="active" for="password">Sua senha</label> -->
+            <div class="input-group">
+              <input
+                [type]="fieldTextType ? 'text' : 'password'"
+                id="password2"
+                type="password2"
+                class="form_input form-control"
+                placeholder="DIGITE A SENHA NOVAMENTE"
+                name="password2"
+                ngModel
+                required
+                formControlName="password2"
+              />
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <span class="material-icons" (click)="toggleFieldTextType()">
+                    {{ changeIcon() }}
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button__container">
+          <button
+            type="submit"
+            [disabled]="!signUpForm.valid"
+            ref=""
+            class="btn btn-info"
+          >
+            Cadastro
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

@@ -6,7 +6,7 @@
     "start": "ng serve --proxy-config proxy.conf.js",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
+    "lint": "tsc --noEmit && eslint . --ext js,ts,json --quiet --fix",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -30,7 +30,14 @@
     "ngx-toastr": "^13.2.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.3"
+    "zone.js": "~0.10.3",
+    "@types/node": "^12.11.1",
+    "eslint": "^7.16.0",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "prettier": "^2.2.1",
+    "prettier-eslint": "^12.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.5",

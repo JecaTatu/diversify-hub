@@ -1,0 +1,61 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#80CBC4",
+        "list.activeSelectionForeground": "#80CBC4",
+        "list.inactiveSelectionForeground": "#80CBC4",
+        "list.highlightForeground": "#80CBC4",
+        "scrollbarSlider.activeBackground": "#80CBC450",
+        "editorSuggestWidget.highlightForeground": "#80CBC4",
+        "textLink.foreground": "#80CBC4",
+        "progressBar.background": "#80CBC4",
+        "pickerGroup.foreground": "#80CBC4",
+        "tab.activeBorder": "#80CBC4",
+        "notificationLink.foreground": "#80CBC4",
+        "editorWidget.resizeBorder": "#80CBC4",
+        "editorWidget.border": "#80CBC4",
+        "settings.modifiedItemIndicator": "#80CBC4",
+        "settings.headerForeground": "#80CBC4",
+        "panelTitle.activeBorder": "#80CBC4",
+        "breadcrumb.activeSelectionForeground": "#80CBC4",
+        "menu.selectionForeground": "#80CBC4",
+        "menubar.selectionForeground": "#80CBC4"
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
+    "materialTheme.accent": "Teal",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        },
+        "editor.formatOnSave": false
+      },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.zoomLevel": 0,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "[typescript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        },
+        "editor.formatOnSave": false
+      },
+      "[json]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        },
+        "editor.formatOnSave": false
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDelete": false,
+}

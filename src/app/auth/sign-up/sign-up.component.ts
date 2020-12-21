@@ -12,39 +12,39 @@ export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
   fieldTextType: boolean;
 
-  enterprise: string = '0';
+  enterprise = '0';
 
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.initSignUpForm();
   }
 
-  initSignUpForm(){
+  initSignUpForm() {
     this.signUpForm = this.fb.group({
-      name: ["", Validators.required],
-      email: ["", [Validators.required, Validators.email]],
-      password1: ["", Validators.required],
-      password2: ["", Validators.required],
-      checker: ["", Validators.required],
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password1: ['', Validators.required],
+      password2: ['', Validators.required],
+      checker: ['', Validators.required]
     });
   }
 
-  onSignUp(){
-    this.authService.signUp(
-      this.signUpForm.value.checker,
-      this.signUpForm.value.name,
-      this.signUpForm.value.email,
-      this.signUpForm.value.password2
-      ).subscribe(
-      res => {
-        console.log(res)
-      }
-    );
+  onSignUp() {
+    this.authService
+      .signUp(
+        this.signUpForm.value.checker,
+        this.signUpForm.value.name,
+        this.signUpForm.value.email,
+        this.signUpForm.value.password2
+      )
+      .subscribe((res) => {
+        console.log(res);
+      });
   }
 
   toggleFieldTextType() {
@@ -53,11 +53,10 @@ export class SignUpComponent implements OnInit {
   }
 
   changeIcon() {
-    if(this.fieldTextType) {
-      return "visibility"
-    }
-    else{
-      return "visibility_off"
+    if (this.fieldTextType) {
+      return 'visibility';
+    } else {
+      return 'visibility_off';
     }
   }
 }

@@ -1,5 +1,5 @@
 import { AuthRoutingModule } from './auth/auth-routing.module';
-import { MaterialModule } from './material.module';
+import { MaterialModule } from './shared/material.module';
 import { AuthModule } from './auth/auth.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
